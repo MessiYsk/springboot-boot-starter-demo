@@ -8,6 +8,7 @@
 package com.yusk.demoweb.core.controller;
 
 import com.example.springbootstarterdemo.hello.HelloService;
+import com.yusk.demoweb.core.config.TestProperties;
 
 import javax.annotation.Resource;
 
@@ -26,9 +27,12 @@ public class HelloController {
 
     @Resource
     private HelloService helloService;
+    @Resource
+    private TestProperties testProperties;
 
     @RequestMapping("/hello")
     public String sayhello() {
         return helloService.sayHello();
+        //        return testProperties.getMsg() + "__________" + testProperties.getRemark();
     }
 }
